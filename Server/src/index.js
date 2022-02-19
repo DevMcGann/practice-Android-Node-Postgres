@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const mercadopago = require("mercadopago");
 require('dotenv').config();
+const routes = require('./routes/MyRouter');
 
 require('./db')
 
@@ -18,14 +19,8 @@ app.use(cors());
 
 
 //rutas
-app.use(require('./routes/index'))
-
-app.get("/prueba", function (req, res) {
-  res.json({
-	"hola": "Anda",
-	"token":process.env.ACCESS_TOKEN
-})
-}); 
+app.use(routes)
+ 
 
 app.post("/crearPreferencia", (req, res) => {
 

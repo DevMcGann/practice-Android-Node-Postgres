@@ -9,6 +9,6 @@ module.exports = (sequelize, type) => {
         nombre:type.STRING,
         descripcion: type.STRING,
         precio:type.DOUBLE,
-        imagenes:type.ARRAY(STRING)
+        imagenes:type.ARRAY(Sequelize.STRING)
     })
 }
