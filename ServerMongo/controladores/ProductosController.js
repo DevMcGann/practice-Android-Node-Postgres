@@ -64,9 +64,12 @@ exports.nuevoProducto = async (req,res,next) => {
     const producto = new Productos(req.body);
     console.log(producto)
     try {
-        if(req.file.filename){
-            producto.imagen = req.file.filename;
+        if(req.file){
+            if(req.file.filename){
+                producto.imagen = req.file.filename;
+            }
         }
+        
         await producto.save();
         res.json({mensaje:"Producto agregado"})
     } catch (error) {

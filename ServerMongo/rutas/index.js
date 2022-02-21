@@ -3,6 +3,7 @@ const router = express.Router();
 
 const usuariosController = require('../controladores/UsuariosController');
 const productosController = require('../controladores/ProductosController');
+const pedidosController = require('../controladores/PedidosController');
 
 const auth = require('../middleware/Auth.js');
 
@@ -15,7 +16,7 @@ module.exports = function(){
       router.post('/usuarios/login', usuariosController.autenticarUsuario);
 
     router.post('/productos/nuevo',
-        //productosController.subirArchivo,
+        productosController.subirArchivo,
         productosController.nuevoProducto
     );
     
@@ -29,11 +30,12 @@ module.exports = function(){
     router.delete('/productos/:idProducto', productosController.eliminarProducto);
     router.post('/productos/busqueda/:query', productosController.buscarProducto);
     
-    // //slider
-    // router.get('/slider', sliderController.mostrarSliders);
-    // router.post('/slider',sliderController.subirArchivo,sliderController.nuevoSlider);
-    // router.delete('/slider/:idSlider', sliderController.eliminarSlider);
-    
+    //******PEDIDOS****** */
+    router.get('/pedidos', pedidosController.mostrarPedidos);
+    router.post('/pedidos/nuevo', pedidosController.nuevoPedido);
+    router.get('pedido/:idPedido', pedidosController.mostrarPedidoPorId);
+    router.put('pedido/:idPedido', pedidosController.actualizarPedido);
+    router.delete('pedido/:idPedido', pedidosController.eliminarPedido);
     
     return router;
     
