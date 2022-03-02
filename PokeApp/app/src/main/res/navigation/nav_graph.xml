@@ -8,6 +8,51 @@
     <fragment
         android:id="@+id/mainScreenFragment"
         android:name="com.gsoft.pokeapp.ui.mainScreen.MainScreenFragment"
-        android:label="fragment_main_screen"
-        tools:layout="@layout/fragment_main_screen" />
+        android:label="Comercio Simple"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_productoFragment2"
+            app:destination="@id/productoFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.gsoft.pokeapp.ui.loginScreen.LoginFragment"
+        android:label="Iniciar Sesión"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment2_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productoFragment2"
+        android:name="com.gsoft.pokeapp.ui.productoScreen.ProductoFragment"
+        android:label="ProductoFragment" >
+        <action
+            android:id="@+id/action_productoFragment2_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/venderFragment"
+        android:name="com.gsoft.pokeapp.ui.venderScreen.VenderFragment"
+        android:label="Vender Producto"
+        tools:layout="@layout/fragment_vender" />
+    <fragment
+        android:id="@+id/myProfileFragment"
+        android:name="com.gsoft.pokeapp.ui.myProfileScreen.MyProfileFragment"
+        android:label="Mi Perfil"
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/misComprasFragment"
+        android:name="com.gsoft.pokeapp.ui.misComprasScreen.MisComprasFragment"
+        android:label="fragment_mis_compras"
+        tools:layout="@layout/fragment_mis_compras" />
+    <fragment
+        android:id="@+id/misVentasFragment"
+        android:name="com.gsoft.pokeapp.ui.misVentasScreen.MisVentasFragment"
+        android:label="fragment_mis_ventas"
+        tools:layout="@layout/fragment_mis_ventas" />
 </navigation>
