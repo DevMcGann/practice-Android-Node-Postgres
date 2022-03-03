@@ -115,5 +115,9 @@ dependencies {
     implementation "androidx.room:room-runtime:$rootProject.room_version"
     kapt "androidx.room:room-compiler:$rootProject.room_version"
 
+    //imagen circular
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:4.11.0"
 }
